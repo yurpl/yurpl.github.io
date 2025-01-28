@@ -1,0 +1,48 @@
+
+.publications-section {
+    width: 100%; /* Take full width */
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  .publications-list {
+    list-style-decimal;
+    padding-left: 2rem;
+  }
+
+  .publication-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .publication-meta {
+    color: #444;
+  }
+
+  .highlighted-author {
+    color: #2563eb;
+    font-weight: 600;
+  }
+
+  .acceptance-rate {
+    background-color: #059669;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    display: inline-block;
+  }
+  .equal-contribution {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 0.25rem;
+  }
+
+  .pdf-link:hover {
+    text-decoration: underline;
+  }
+  .pdf-link {
+    color: #2563eb;
+    text-decoration: none;
+
+  }
