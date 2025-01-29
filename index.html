@@ -6,8 +6,6 @@
   <title>John Murzaku</title>
 
   <!-- Bootstrap CSS -->
-  <!-- Either use your local bootstrap or the CDN below:
-  <link rel="stylesheet" href="css/bootstrap.css"> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
 
   <!-- Custom CSS -->
@@ -19,43 +17,38 @@
 <div class="container">
 
   <!-- Header / Navigation -->
-  <div class="header">
+  <div class="header" style="margin-bottom: 1rem;">
     <ul class="nav nav-pills pull-right">
-      <li class="Linkedin">
-        <a href="https://www.linkedin.com/in/john-murzaku-a0a402201" title="LinkedIn">LinkedIn</a>
-      </li>
-      <li class="GitHub">
-        <a href="https://github.com/yurpl?tab=repositories" title="GitHub">GitHub</a>
-      </li>
+      <li><a href="https://www.linkedin.com/in/john-murzaku-a0a402201" title="LinkedIn">LinkedIn</a></li>
+      <li><a href="https://github.com/yurpl?tab=repositories" title="GitHub">GitHub</a></li>
     </ul>
-    <h3 class="text-muted"><a href="index.html">John Murzaku</a></h3>
+    <h3 class="text-muted" style="margin-top: 0;"><a href="index.html">John Murzaku</a></h3>
   </div>
 
   <!-- Intro Row -->
-  <div class="row marketing">
+  <div class="row marketing" style="margin-bottom: 1.5rem;">
     <!-- Profile picture on the left -->
     <div class="col-sm-4">
-      <!-- Replace with your own photo path -->
-      <img class="img-circle avatar" alt="John Murzaku" src="images/profile_picture.jpg" width="50%">
+      <img class="img-circle avatar" alt="John Murzaku"
+           src="images/profile_picture.jpg" style="width: 70%; max-width: 200px;">
     </div>
 
     <!-- Name and quick details on the right -->
     <div itemscope itemtype="http://data-vocabulary.org/Person" class="col-sm-8">
-      <br/><br/>
+      <!-- Removed extra <br><br>, rely on margins instead -->
       <p class="lead">
         Computer Science PhD student at
         <a href="https://www.stonybrook.edu">Stony Brook University</a>
       </p>
       <p>
-        Advisor: <a href="https://owenrambow.com/">Owen Rambow</a>
-        <br/>
+        Advisor: <a href="https://owenrambow.com/">Owen Rambow</a><br>
         Email: <strong>jmurzaku</strong> &#60;at> <strong>cs.stonybrook</strong> &#60;dot> <strong>edu</strong>
       </p>
     </div>
   </div>
 
-  <!-- "Hello!" / Intro Section -->
-  <section>
+  <!-- "About me" Section -->
+  <section style="margin-bottom: 2rem;">
     <h2>About me</h2>
     <div class="row">
       <div class="col-md-11">
@@ -67,10 +60,9 @@
         </p>
         <p>
           My work spans <em>computational linguistics</em> and <em>cognitive science</em>, bridging
-          theory-of-mind concepts with modern NLP.
-          I am also interested in how large language models process spontaneous narratives and how
-          we can evaluate or improve their ability to detect hedges, sarcasm, or other subtle markers
-          of speaker intent.
+          theory-of-mind concepts with modern NLP. I am also interested in how large language
+          models process spontaneous narratives and how we can evaluate or improve their ability
+          to detect hedges, sarcasm, or other subtle markers of speaker intent.
         </p>
         <p>
           Recently, I interned at <strong>Adobe</strong> working on interactive disambiguation and clarification question
@@ -82,161 +74,138 @@
     </div>
   </section>
 
-  <hr/>
-<section class="publications-section">
-  <h2>Publications</h2>
-  <ol class="publications-list">
-    <li class="publication-item">
-      <div class="publication-title">ECLAIR: Enhanced Clarification for Interactive Responses in an Enterprise AI Assistant</div>
-      <div class="publication-meta">
-        <em>AAAI 2025 (Demo Track).</em>
-        <span class="highlighted-author">J. Murzaku</span>, Z. Liu, V. Muppala, M. Tanjim, X. Chen, Y. Li
-      </div>
-    </li>
+  <!-- Publications Section -->
+  <!-- Reduced bottom margin on hr -->
+  <hr style="margin: 2rem 0 1rem 0;">
 
-    <li class="publication-item">
-      <div class="publication-title">ECLAIR: Enhanced Clarification for Interactive Responses</div>
-      <div class="publication-meta">
-        <em>IAAI 2025.</em>
-        <span class="highlighted-author">J. Murzaku</span>, Z. Liu, M. Tanjim, V. Muppala, X. Chen, Y. Li
-        <span class="acceptance-rate">15.7% Acceptance Rate</span>
-      </div>
-    </li>
+  <section class="publications-section" style="margin-bottom: 2rem;">
+    <h2>Publications</h2>
+    <ol class="publications-list">
+      <li class="publication-item">
+        <div class="publication-title">
+          ECLAIR: Enhanced Clarification for Interactive Responses in an Enterprise AI Assistant
+        </div>
+        <div class="publication-meta">
+          <em>To appear at AAAI 2025 (Demo Track).</em>
+          <span class="highlighted-author">J. Murzaku</span>, Z. Liu, V. Muppala, M. Tanjim, X. Chen, Y. Li
+          <span class="tag tag-adobe">Adobe Internship</span>
 
-    <li class="publication-item">
-      <div class="publication-title">Synthetic Audio Helps for Cognitive State Tasks</div>
-      <div class="publication-meta">
-        <em>Findings of NAACL 2025.</em>
-        A. Soubki*, <span class="highlighted-author">J. Murzaku*</span>, P. Zeng, O. Rambow
-      </div>
-    </li>
+        </div>
+      </li>
+      <li class="publication-item">
+        <div class="publication-title">ECLAIR: Enhanced Clarification for Interactive Responses</div>
+        <div class="publication-meta">
+          <em>To appear at IAAI 2025.</em>
+          <span class="highlighted-author">J. Murzaku</span>, Z. Liu, M. Tanjim, V. Muppala, X. Chen, Y. Li
+          <span class="acceptance-rate">15.7% Acceptance Rate</span>
+          <span class="tag tag-adobe">Adobe Internship</span>
+        </div>
+      </li>
+      <li class="publication-item">
+        <div class="publication-title">Synthetic Audio Helps for Cognitive State Tasks</div>
+        <div class="publication-meta">
+          <em>To appear at Findings of NAACL 2025.</em>
+          A. Soubki*, <span class="highlighted-author">J. Murzaku*</span>, P. Zeng, O. Rambow
+        </div>
+      </li>
+      <li class="publication-item">
+        <div class="publication-title">Training LLMs to Recognize Hedges in Spontaneous Narratives</div>
+        <div class="publication-meta">
+          <em>SIGDIAL 2024.</em>
+          A. Paige*, A. Soubki*, <span class="highlighted-author">J. Murzaku*</span>, O. Rambow, S. Brennan
+          <a href="https://aclanthology.org/2024.sigdial-1.18.pdf" class="pdf-link">[PDF]</a>
+          <span class="tag tag-psychology">Psychology Dept. Collaboration</span>
 
-    <li class="publication-item">
-      <div class="publication-title">Training LLMs to Recognize Hedges in Spontaneous Narratives</div>
-      <div class="publication-meta">
-        <em>SIGDIAL 2024.</em>
-        A. Paige*, A. Soubki*, <span class="highlighted-author">J. Murzaku*</span>, O. Rambow, S. Brennan
-        <a href="#" class="pdf-link">[PDF]</a>
-      </div>
-    </li>
+        </div>
+      </li>
+      <li class="publication-item">
+        <div class="publication-title">
+          Views Are My Own, but Also Yours: Benchmarking Theory of Mind Using Common Ground
+        </div>
+        <div class="publication-meta">
+          <em>Findings of ACL 2024.</em>
+          A. Soubki, <span class="highlighted-author">J. Murzaku</span>, A. Y. Jordehi, P. Zeng,
+          M. Markowska, S.A. Mirroshandel, O. Rambow
+          <a href="https://aclanthology.org/2024.findings-acl.880.pdf" class="pdf-link">[PDF]</a>
+        </div>
+      </li>
+      <li class="publication-item">
+        <div class="publication-title">Multimodal Belief Prediction</div>
+        <div class="publication-meta">
+          <em>Interspeech 2024.</em>
+          <span class="highlighted-author">J. Murzaku*</span>, A. Soubki*, O. Rambow
+          <a href="https://www.isca-archive.org/interspeech_2024/murzaku24_interspeech.html#" class="pdf-link">[PDF]</a>
+        </div>
+      </li>
+      <li class="publication-item">
+        <div class="publication-title">BeLeaf: Belief Prediction as Tree Generation</div>
+        <div class="publication-meta">
+          <em>NAACL 2024 Demo.</em>
+          <span class="highlighted-author">J. Murzaku</span>, O. Rambow
+          <a href="https://aclanthology.org/2024.naacl-demo.10.pdf" class="pdf-link">[PDF]</a>
+        </div>
+      </li>
+      <li class="publication-item">
+        <div class="publication-title">Towards Generative Event Factuality Prediction</div>
+        <div class="publication-meta">
+          <em>Findings of ACL 2023.</em>
+          <span class="highlighted-author">J. Murzaku</span>, T. Osborne, A. Aviram, O. Rambow
+          <a href="https://aclanthology.org/2023.findings-acl.44.pdf" class="pdf-link">[PDF]</a>
+        </div>
+      </li>
+      <li class="publication-item">
+        <div class="publication-title">
+          Re-Examining Factbank: Predicting the Author's Presentation of Factuality
+        </div>
+        <div class="publication-meta">
+          <em>COLING 2022.</em>
+          <span class="highlighted-author">J. Murzaku</span>, P. Zeng, M. Markowska, O. Rambow
+          <a href="https://aclanthology.org/2022.coling-1.66.pdf" class="pdf-link">[PDF]</a>
+        </div>
+      </li>
+    </ol>
+    <div class="equal-contribution" style="margin-top: 0.5rem;">
+      * denotes equal contribution
+    </div>
+  </section>
 
-    <li class="publication-item">
-      <div class="publication-title">Views Are My Own, but Also Yours: Benchmarking Theory of Mind Using Common Ground</div>
-      <div class="publication-meta">
-        <em>Findings of ACL 2024.</em>
-        A. Soubki, <span class="highlighted-author">J. Murzaku</span>, A. Y. Jordehi, P. Zeng, M. Markowska, S.A. Mirroshandel, O. Rambow
-        <a href="#" class="pdf-link">[PDF]</a>
-      </div>
-    </li>
+  <!-- Updates Section -->
+  <hr style="margin: 1.5rem 0;">
 
-    <li class="publication-item">
-      <div class="publication-title">Multimodal Belief Prediction</div>
-      <div class="publication-meta">
-        <em>Interspeech 2024.</em>
-        <span class="highlighted-author">J. Murzaku*</span>, A. Soubki*, O. Rambow
-        <a href="#" class="pdf-link">[PDF]</a>
-      </div>
-    </li>
-
-    <li class="publication-item">
-      <div class="publication-title">BeLeaf: Belief Prediction as Tree Generation</div>
-      <div class="publication-meta">
-        <em>NAACL 2024 Demo.</em>
-        <span class="highlighted-author">J. Murzaku</span>, O. Rambow
-        <a href="#" class="pdf-link">[PDF]</a>
-      </div>
-    </li>
-
-    <li class="publication-item">
-      <div class="publication-title">Towards Generative Event Factuality Prediction</div>
-      <div class="publication-meta">
-        <em>Findings of ACL 2023.</em>
-        <span class="highlighted-author">J. Murzaku</span>, T. Osborne, A. Aviram, O. Rambow
-        <a href="#" class="pdf-link">[PDF]</a>
-      </div>
-    </li>
-
-    <li class="publication-item">
-      <div class="publication-title">Re-Examining Factbank: Predicting the Author's Presentation of Factuality</div>
-      <div class="publication-meta">
-        <em>COLING 2022.</em>
-        <span class="highlighted-author">J. Murzaku</span>, P. Zeng, M. Markowska, O. Rambow
-        <a href="#" class="pdf-link">[PDF]</a>
-      </div>
-    </li>
-  </ol>
-        <div class="equal-contribution">* denotes equal contribution</div>
-
-</section>
-
-  <hr/>
-
-  <!-- Updates Section (optional) -->
-  <section>
+  <section style="margin-bottom: 2rem;">
     <h2>Updates</h2>
-    <div class="row">
-      <div class="col-md-3">
-        <strong>January 2025</strong>
-      </div>
+    <div class="row" style="margin-bottom: 1rem;">
+      <div class="col-md-3"><strong>January 2025</strong></div>
       <div class="col-md-7">
         <p>My Adobe internship work on <em>Enhanced Clarification for Interactive Responses (ECLAIR)</em>
-          to appear AAAI 2025 (Demo) and IAAI 2025. Another publication on <em>Synthetic Audio Data</em> accepted to Findings of NAACL 2025.
+          to appear AAAI 2025 (Demo) and IAAI 2025. Another publication on <em>Synthetic Audio Data</em>
+          accepted to Findings of NAACL 2025.
+        </p>
+      </div>
+    </div>
+    <div class="row" style="margin-bottom: 1rem;">
+      <div class="col-md-3"><strong>May - Nov. 2024</strong></div>
+      <div class="col-md-7">
+        <p>Interned at <a href="https://business.adobe.com/products/experience-platform/adobe-experience-platform.html">Adobe</a> as an ML Engineer, building an interactive disambiguation
+        pipeline the AEP AI assistant. I had an excellent experience, and was fortunate to be mentored by <a href="https://www.linkedin.com/in/zifan-liu-cs/">Zifan Liu</a>
+        and manager <a href="https://yunyaoli.github.io/">Yunyao Li</a>. Two papers accepted and a patent submitted!
+        </p>
+      </div>
+    </div>
+    <div class="row" style="margin-bottom: 1rem;">
+      <div class="col-md-3"><strong>Sep. - Dec 2023</strong></div>
+      <div class="col-md-7">
+        <p>
+        Interned at the Genius Institute at <a href="https://www.gapinternational.com/">Gap International</a> as an NLP Engineer. I helped leverage
+        LLMs to detect patterns of genius and built an unsupervised clustering pipeline for genius detection. I was mentored by my amazing father <a href="https://www.linkedin.com/in/murzaku/">Alex Murzaku</a> (also fulfilling my childhood dream of one day working together with my dad).
         </p>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-3">
-        <strong>September 2024</strong>
-      </div>
-      <div class="col-md-7">
-        <p>Presented <em>Multimodal Belief Prediction</em> at Interspeech 2024. Went to SIGDIAL 2024 right after and presented our joint collaboration <em>Training LLMs to Recognize Hedges in Spontaneous Narratives</em></p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-3">
-        <strong>May - Nov. 2024</strong>
-      </div>
-      <div class="col-md-7">
-        <p>Interned at <a href="https://business.adobe.com/products/experience-platform/adobe-experience-platform.html">Adobe</a> as an ML Engineer, researching & building an ambiguity detection
-        pipeline for AI assistants with <a href="https://www.linkedin.com/in/zifan-liu-cs/">Zifan Liu</a>
-        and <a href="https://yunyaoli.github.io/">Yunyao Li</a>. Two papers accepted and a patent submitted!</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-3">
-        <strong>Sep. - Dec. 2023</strong>
-      </div>
-      <div class="col-md-7">
-        <p>Interned at <a href="https://www.gapinternational.com/">Gap International</a> as an NLP Engineer, leveraging
-        LLMs to detect patterns of genius.</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-3">
-        <strong>May - Aug. 2023</strong>
-      </div>
-      <div class="col-md-7">
-        <p>Spent the summer at Raytheon BBN focusing on authorship attribution and synthetic data generation with LLaMA-2.</p>
-      </div>
-    </div>
 
   </section>
 
-  <hr/>
-
-  <!-- Publications Section -->
-
-  <!-- If you have a Service or other sections, add them here -->
-  <!-- e.g., <section><h2>Service</h2> ...</section> -->
-
 </div> <!-- /container -->
-
-<!-- Bootstrap JS (optional) -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script> -->
 
 </body>
 </html>
