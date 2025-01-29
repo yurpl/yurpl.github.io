@@ -1,36 +1,83 @@
-/* Publications section: reduce spacing between list items */
-.publications-section {
-  width: 100%; /* Keep full width */
-  font-family: system-ui, -apple-system, sans-serif;
+/* =========== General / Layout =========== */
+
+/* Give the whole container a bit more top/bottom padding to center the layout */
+.main-container {
+  padding: 2rem 1rem;
+  max-width: 960px; /* optional: limit overall width if desired */
+  margin: 0 auto;   /* center horizontally if max-width is set */
 }
 
-/* Make sure ordered list is nice and tight */
+/* Title & Header spacing */
+.site-title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* Keep the row “marketing top-section” tight but consistent */
+.top-section {
+  margin-bottom: 2rem; /* space between the top profile area and the next section */
+}
+
+/* Make the avatar smaller by default if you want */
+.avatar {
+  width: 70%;
+  max-width: 200px;
+}
+
+/* Shared hr style for consistent horizontal rules */
+hr {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  margin: 2rem 0;
+}
+
+/* =========== Sections =========== */
+.about-section {
+  margin-bottom: 2rem;
+}
+
+.updates-section {
+  margin-bottom: 2rem;
+}
+
+.updates-section .update-item {
+  margin-bottom: 1rem; /* space between updates */
+}
+
+/* =========== Publications =========== */
+.publications-section {
+  width: 100%;
+  font-family: system-ui, -apple-system, sans-serif;
+  margin-bottom: 2rem;
+}
+
 .publications-list {
   list-style: decimal;
   padding-left: 2rem;
-  margin-bottom: 0; /* Remove extra bottom margin if desired */
+  margin-bottom: 0;
 }
 
 .publication-item {
-  margin-bottom: 1rem; /* Decrease/adjust as needed */
+  margin-bottom: 1rem;
 }
 
-/* Style the publication details more compactly */
 .publication-title {
   font-weight: 600;
-  margin-bottom: 0.3rem; /* Tighter spacing */
+  margin-bottom: 0.3rem;
 }
 
 .publication-meta {
   color: #444;
-  line-height: 1.4; /* Slightly tighter line-height */
+  line-height: 1.4;
 }
 
+/* Highlighted author name */
 .highlighted-author {
   color: #2563eb;
   font-weight: 600;
 }
 
+/* Acceptance Rate Badge */
 .acceptance-rate {
   background-color: #059669;
   color: white;
@@ -40,13 +87,7 @@
   margin-left: 0.3rem;
 }
 
-.equal-contribution {
-  font-style: italic;
-  font-size: 1.1rem;
-  color: #555;
-}
-
-/* PDF link styling */
+/* =========== PDF link styling =========== */
 .pdf-link {
   color: #2563eb;
   text-decoration: none;
@@ -57,20 +98,7 @@
   text-decoration: underline;
 }
 
-/* Example of tightening up your headings, removing top margin */
-h2 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-/* Optional: remove large default hr spacing */
-hr {
-  border: none;
-  border-bottom: 1px solid #ccc;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
+/* =========== Tag classes =========== */
 .tag {
   padding: 2px 8px;
   border-radius: 4px;
@@ -87,4 +115,12 @@ hr {
 .tag-psychology {
   background-color: #6a5acd;
   color: #FFF;
+}
+
+/* =========== Equal contribution notice =========== */
+.equal-contribution {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 0.5rem;
 }
