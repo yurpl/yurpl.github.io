@@ -143,6 +143,7 @@ hr {
 .highlighted-author {
   color: #2563eb;
   font-weight: 600;
+  text-decoration: underline;
 }
 
 /* Styling for first-authored publication items */
