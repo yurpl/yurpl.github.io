@@ -167,48 +167,14 @@
       font-weight: 500;
     }
 
-    /* Right panel - Swipe Interface */
+    /* Right panel - Research Grid */
     .viz-panel {
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-    }
-
-    .swipe-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      max-width: 540px;
-      height: 100%;
-      padding: 20px;
-      position: relative;
-      margin: 0 auto;
-    }
-
-    .swipe-header {
-      text-align: center;
-      margin-bottom: 12px;
-      animation: fadeIn 0.6s ease-out;
-    }
-
-    .swipe-header h2 {
-      font-family: 'Libre Baskerville', serif;
-      font-size: 20px;
-      font-weight: 400;
-      font-style: italic;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-
-    .swipe-hint {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 10px;
-      color: var(--text-dim);
-      letter-spacing: 0.5px;
+      overflow-y: auto;
+      padding: 40px;
     }
 
     @keyframes fadeIn {
@@ -216,288 +182,130 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Filter chips */
-    .filter-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      justify-content: center;
-      margin-bottom: 14px;
-      animation: fadeIn 0.6s ease-out 0.1s both;
+    /* Research box container */
+    .research-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      animation: fadeIn 0.6s ease-out;
     }
 
-    .chip {
+    .research-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .research-header h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 22px;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .research-header p {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 11px;
-      padding: 6px 12px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      background: #fff;
       color: var(--text-dim);
-      cursor: pointer;
-      transition: all 0.2s ease;
+      letter-spacing: 0.5px;
     }
 
-    .chip:hover {
-      border-color: var(--purple-light);
-      color: var(--purple);
+    /* Category sections */
+    .category-section {
+      margin-bottom: 24px;
     }
 
-    .chip.active {
-      background: var(--purple);
-      border-color: var(--purple);
-      color: #fff;
+    .category-section:last-child {
+      margin-bottom: 0;
     }
 
-    .chip[data-filter="belief"].active { background: var(--purple); border-color: var(--purple); }
-    .chip[data-filter="multimodal"].active { background: var(--yellow); border-color: var(--yellow); color: #2a2438; }
-    .chip[data-filter="psycholing"].active { background: #2ea082; border-color: #2ea082; }
-    .chip[data-filter="applied"].active { background: #d05050; border-color: #d05050; }
-
-    /* Card stack */
-    .card-stack {
-      position: relative;
-      width: 440px;
-      height: 360px;
-      margin: 0 auto;
-      animation: fadeIn 0.6s ease-out 0.2s both;
-    }
-
-    .paper-card {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.04);
-      cursor: grab;
-      user-select: none;
-      overflow: hidden;
-      transition: box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .paper-card:active {
-      cursor: grabbing;
-    }
-
-    .paper-card:hover {
-      box-shadow: 0 8px 30px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.04);
-    }
-
-    .paper-card.swiping-right {
-      box-shadow: 0 8px 30px rgba(46, 160, 130, 0.3), 0 0 0 2px #2ea082;
-    }
-
-    .paper-card.swiping-left {
-      box-shadow: 0 8px 30px rgba(208, 80, 80, 0.3), 0 0 0 2px #d05050;
-    }
-
-    /* Card preview area - styled like a paper */
-    .card-preview {
-      flex: 1;
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-      padding: 32px 32px 28px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 16px;
-    }
-
-    .card-preview::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-    }
-
-    .card-preview.belief::before { background: linear-gradient(90deg, var(--purple), var(--purple-light)); }
-    .card-preview.multimodal::before { background: linear-gradient(90deg, var(--yellow), #f5d060); }
-    .card-preview.psycholing::before { background: linear-gradient(90deg, #2ea082, #4fc4a1); }
-    .card-preview.applied::before { background: linear-gradient(90deg, #d05050, #e88); }
-
-    .preview-venue {
+    .category-label {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--text-dim);
-      margin-bottom: 14px;
+      letter-spacing: 1.5px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      padding-left: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .preview-title {
-      font-family: 'Libre Baskerville', serif;
-      font-size: 22px;
-      font-weight: 700;
+    .category-label::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .category-label.belief { color: var(--purple); }
+    .category-label.belief::before { background: var(--purple); }
+    .category-label.multimodal { color: #b08a15; }
+    .category-label.multimodal::before { background: var(--yellow); }
+    .category-label.psycholing { color: #1f8a6f; }
+    .category-label.psycholing::before { background: #2ea082; }
+    .category-label.applied { color: #c04040; }
+    .category-label.applied::before { background: #d05050; }
+
+    /* Paper tiles */
+    .paper-tiles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .paper-tile {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 10px 14px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.2s ease;
       line-height: 1.3;
-      color: var(--text);
-      margin-bottom: 14px;
-      flex-shrink: 0;
+      max-width: 100%;
     }
 
-    .preview-authors {
-      font-size: 15px;
-      color: var(--text-dim);
-      line-height: 1.4;
-      margin-bottom: 20px;
-    }
-
-    .preview-authors strong {
-      color: var(--purple);
-      font-weight: 600;
-    }
-
-    .preview-abstract {
-      font-size: 15px;
-      color: var(--text-dim);
-      line-height: 1.6;
-      opacity: 0.8;
-    }
-
-    .preview-cluster-icon {
-      position: absolute;
-      bottom: 16px;
-      right: 16px;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0.15;
-    }
-
-    .preview-cluster-icon svg {
-      width: 24px;
-      height: 24px;
-    }
-
-    .preview-cluster-icon.belief { color: var(--purple); }
-    .preview-cluster-icon.multimodal { color: var(--yellow); }
-    .preview-cluster-icon.psycholing { color: #2ea082; }
-    .preview-cluster-icon.applied { color: #d05050; }
-
-    /* Swipe indicator overlays */
-    .swipe-indicator {
-      position: absolute;
-      top: 20px;
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 14px;
-      font-weight: 600;
-      opacity: 0;
-      transition: opacity 0.2s ease;
-      pointer-events: none;
-      z-index: 10;
-    }
-
-    .swipe-indicator.read {
-      right: 20px;
-      background: #2ea082;
-      color: #fff;
-    }
-
-    .swipe-indicator.skip {
-      left: 20px;
-      background: #d05050;
-      color: #fff;
-    }
-
-    /* Swipe action buttons */
-    .swipe-actions {
-      display: flex;
-      gap: 20px;
-      margin-top: 14px;
-      animation: fadeIn 0.6s ease-out 0.3s both;
-    }
-
-    .swipe-btn {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      border: 2px solid var(--border);
-      background: #fff;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
-    }
-
-    .swipe-btn svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .swipe-btn.skip {
-      color: #d05050;
-    }
-
-    .swipe-btn.skip:hover {
-      background: #d05050;
-      border-color: #d05050;
-      color: #fff;
-      transform: scale(1.1);
-    }
-
-    .swipe-btn.read {
-      color: #2ea082;
-    }
-
-    .swipe-btn.read:hover {
-      background: #2ea082;
-      border-color: #2ea082;
-      color: #fff;
-      transform: scale(1.1);
-    }
-
-    .card-counter {
-      margin-top: 10px;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      color: var(--text-dim);
-      animation: fadeIn 0.6s ease-out 0.4s both;
-    }
-
-    /* Empty state */
-    .empty-state {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--text-dim);
-    }
-
-    .empty-state h3 {
-      font-family: 'Libre Baskerville', serif;
-      font-size: 18px;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
-
-    .empty-state p {
-      font-size: 14px;
-      margin-bottom: 16px;
-    }
-
-    .empty-state button {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 12px;
-      padding: 10px 20px;
-      background: var(--purple);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .empty-state button:hover {
-      background: var(--purple-deep);
+    .paper-tile:hover {
       transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .paper-tile.belief:hover {
+      border-color: var(--purple);
+      background: rgba(124, 92, 188, 0.08);
+    }
+
+    .paper-tile.multimodal:hover {
+      border-color: var(--yellow);
+      background: rgba(230, 180, 34, 0.12);
+    }
+
+    .paper-tile.psycholing:hover {
+      border-color: #2ea082;
+      background: rgba(46, 160, 130, 0.08);
+    }
+
+    .paper-tile.applied:hover {
+      border-color: #d05050;
+      background: rgba(220, 80, 80, 0.08);
+    }
+
+    .paper-tile .venue {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      margin-top: 4px;
+      display: block;
     }
 
     /* Scroll indicator */
@@ -701,7 +509,20 @@
       }
 
       .viz-panel {
-        height: 500px;
+        padding: 32px 24px;
+      }
+
+      .research-box {
+        padding: 24px;
+      }
+
+      .research-header h2 {
+        font-size: 20px;
+      }
+
+      .paper-tile {
+        font-size: 12px;
+        padding: 8px 12px;
       }
 
       h1 {
@@ -745,32 +566,47 @@
   </div>
 
   <div class="viz-panel">
-    <div class="swipe-container">
-      <div class="swipe-header">
-        <h2>Research Papers</h2>
-        <p class="swipe-hint">Swipe right to read · left to skip</p>
+    <div class="research-box">
+      <div class="research-header">
+        <h2>Research</h2>
+        <p>12 publications · click to read</p>
       </div>
 
-      <div class="filter-chips" id="filter-chips">
-        <button class="chip active" data-filter="all">All</button>
-        <button class="chip" data-filter="belief">Belief & ToM</button>
-        <button class="chip" data-filter="multimodal">Multimodal</button>
-        <button class="chip" data-filter="psycholing">Psycholinguistics</button>
-        <button class="chip" data-filter="applied">Applied AI</button>
+      <div class="category-section">
+        <div class="category-label belief">Belief & Theory of Mind</div>
+        <div class="paper-tiles">
+          <a href="https://arxiv.org/pdf/2502.08777" target="_blank" class="paper-tile belief">Zero-Shot Belief Tracking<span class="venue">CODI 2025</span></a>
+          <a href="https://aclanthology.org/2024.findings-acl.880.pdf" target="_blank" class="paper-tile belief">Views Are My Own, but Also Yours<span class="venue">ACL Findings 2024</span></a>
+          <a href="https://aclanthology.org/2024.naacl-demo.10.pdf" target="_blank" class="paper-tile belief">BeLeaf: Belief as Tree Generation<span class="venue">NAACL Demo 2024</span></a>
+          <a href="https://aclanthology.org/2023.findings-acl.44.pdf" target="_blank" class="paper-tile belief">Generative Event Factuality<span class="venue">ACL Findings 2023</span></a>
+          <a href="https://aclanthology.org/2022.coling-1.66.pdf" target="_blank" class="paper-tile belief">Re-Examining Factbank<span class="venue">COLING 2022</span></a>
+        </div>
       </div>
 
-      <div class="card-stack" id="card-stack"></div>
-
-      <div class="swipe-actions">
-        <button class="swipe-btn skip" id="btn-skip" title="Skip (←)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-        </button>
-        <button class="swipe-btn read" id="btn-read" title="Read Paper (→)">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
+      <div class="category-section">
+        <div class="category-label multimodal">Multimodal</div>
+        <div class="paper-tiles">
+          <a href="https://arxiv.org/pdf/2503.21480" target="_blank" class="paper-tile multimodal">OmniVox: Emotion Recognition<span class="venue">arXiv 2025</span></a>
+          <a href="https://arxiv.org/pdf/2502.06922" target="_blank" class="paper-tile multimodal">Synthetic Audio for Cognitive Tasks<span class="venue">NAACL Findings 2025</span></a>
+          <a href="https://www.isca-archive.org/interspeech_2024/murzaku24_interspeech.html" target="_blank" class="paper-tile multimodal">Multimodal Belief Prediction<span class="venue">Interspeech 2024</span></a>
+        </div>
       </div>
 
-      <div class="card-counter" id="card-counter">1 / 12</div>
+      <div class="category-section">
+        <div class="category-label psycholing">Psycholinguistics</div>
+        <div class="paper-tiles">
+          <a href="#" class="paper-tile psycholing">Projecting Knowledge & Common Ground<span class="venue">ToM4AI @ AAAI 2025</span></a>
+          <a href="https://aclanthology.org/2024.sigdial-1.18.pdf" target="_blank" class="paper-tile psycholing">Recognizing Hedges in Narratives<span class="venue">SIGDIAL 2024</span></a>
+        </div>
+      </div>
+
+      <div class="category-section">
+        <div class="category-label applied">Applied AI</div>
+        <div class="paper-tiles">
+          <a href="https://arxiv.org/abs/2503.15739" target="_blank" class="paper-tile applied">ECLAIR: Enhanced Clarification<span class="venue">IAAI 2025</span></a>
+          <a href="https://arxiv.org/pdf/2503.20791" target="_blank" class="paper-tile applied">ECLAIR Demo<span class="venue">AAAI Demo 2025</span></a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -875,271 +711,6 @@
 
 <script data-goatcounter="https://yurpl.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
-<script>
-// Paper data with abstracts
-const papers = [
-  { id: 1, title: "Zero-Shot Belief Tracking", venue: "CODI 2025", authors: "J. Murzaku, O. Rambow", url: "https://arxiv.org/pdf/2502.08777", cluster: "belief", clusterLabel: "Belief & ToM", abstract: "We study the ability of LLMs to track beliefs in dialogue without task-specific training, revealing fundamental limitations in zero-shot theory of mind reasoning." },
-  { id: 2, title: "OmniVox: Emotion Recognition with Omni-LLMs", venue: "arXiv 2025", authors: "J. Murzaku, O. Rambow", url: "https://arxiv.org/pdf/2503.21480", cluster: "multimodal", clusterLabel: "Multimodal", abstract: "We explore how omnimodal large language models can recognize emotions directly from speech, bypassing traditional ASR pipelines." },
-  { id: 3, title: "Projecting Knowledge and Common Ground", venue: "ToM4AI @ AAAI 2025", authors: "Soubki, Paige, Murzaku, Rambow, Brennan", url: "#", cluster: "psycholing", clusterLabel: "Psycholinguistics", abstract: "Investigating how characters in narratives project their knowledge states and establish common ground through linguistic cues." },
-  { id: 4, title: "ECLAIR: Enhanced Clarification (Demo)", venue: "AAAI 2025 Demo", authors: "J. Murzaku et al.", url: "https://arxiv.org/pdf/2503.20791", cluster: "applied", clusterLabel: "Applied AI", abstract: "A demonstration of ECLAIR, our framework for detecting ambiguity in user queries and generating targeted clarification questions." },
-  { id: 5, title: "ECLAIR: Enhanced Clarification for Interactive Responses", venue: "IAAI 2025", authors: "J. Murzaku et al.", url: "https://arxiv.org/abs/2503.15739", cluster: "applied", clusterLabel: "Applied AI", abstract: "ECLAIR enhances AI assistants by detecting ambiguous queries and generating clarifying questions, improving response accuracy in enterprise settings." },
-  { id: 6, title: "Synthetic Audio Helps Cognitive State Tasks", venue: "NAACL 2025 Findings", authors: "Soubki*, Murzaku*, Zeng, Rambow", url: "https://arxiv.org/pdf/2502.06922", cluster: "multimodal", clusterLabel: "Multimodal", abstract: "We show that augmenting training data with synthetic speech improves model performance on cognitive state recognition tasks." },
-  { id: 7, title: "Training LLMs to Recognize Hedges", venue: "SIGDIAL 2024", authors: "Paige*, Soubki*, Murzaku*, Rambow, Brennan", url: "https://aclanthology.org/2024.sigdial-1.18.pdf", cluster: "psycholing", clusterLabel: "Psycholinguistics", abstract: "We train language models to detect hedging expressions in spontaneous speech narratives, capturing epistemic uncertainty markers." },
-  { id: 8, title: "Views Are My Own, but Also Yours", venue: "ACL 2024 Findings", authors: "Soubki, Murzaku, et al.", url: "https://aclanthology.org/2024.findings-acl.880.pdf", cluster: "belief", clusterLabel: "Belief & ToM", abstract: "A benchmark for evaluating theory of mind capabilities in language models, testing whether they can distinguish their own knowledge from characters' beliefs." },
-  { id: 9, title: "Multimodal Belief Prediction", venue: "Interspeech 2024", authors: "J. Murzaku*, A. Soubki*, O. Rambow", url: "https://www.isca-archive.org/interspeech_2024/murzaku24_interspeech.html", cluster: "multimodal", clusterLabel: "Multimodal", abstract: "Combining text and audio signals to predict speakers' beliefs about events, leveraging prosodic cues alongside linguistic content." },
-  { id: 10, title: "BeLeaf: Belief Prediction as Tree Generation", venue: "NAACL 2024 Demo", authors: "J. Murzaku, O. Rambow", url: "https://aclanthology.org/2024.naacl-demo.10.pdf", cluster: "belief", clusterLabel: "Belief & ToM", abstract: "BeLeaf frames belief prediction as structured tree generation, enabling interpretable extraction of nested belief hierarchies from text." },
-  { id: 11, title: "Towards Generative Event Factuality", venue: "ACL 2023 Findings", authors: "J. Murzaku, Osborne, Aviram, Rambow", url: "https://aclanthology.org/2023.findings-acl.44.pdf", cluster: "belief", clusterLabel: "Belief & ToM", abstract: "We propose a generative approach to factuality prediction, moving beyond classification to produce structured factuality representations." },
-  { id: 12, title: "Re-Examining Factbank", venue: "COLING 2022", authors: "J. Murzaku, Zeng, Markowska, Rambow", url: "https://aclanthology.org/2022.coling-1.66.pdf", cluster: "belief", clusterLabel: "Belief & ToM", abstract: "A critical re-examination of the FactBank corpus, addressing annotation inconsistencies and proposing improved guidelines for factuality annotation." },
-];
-
-// DOM elements
-const cardStack = document.getElementById('card-stack');
-const cardCounter = document.getElementById('card-counter');
-const filterChips = document.getElementById('filter-chips');
-const btnSkip = document.getElementById('btn-skip');
-const btnRead = document.getElementById('btn-read');
-
-// State
-let currentFilter = 'all';
-let filteredPapers = [...papers];
-let currentIndex = 0;
-let isDragging = false;
-let startX = 0;
-let startY = 0;
-let currentX = 0;
-let currentY = 0;
-
-// Cluster icons
-const clusterIcons = {
-  belief: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>',
-  multimodal: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>',
-  psycholing: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>',
-  applied: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>'
-};
-
-// Create a card element
-function createCard(paper, index) {
-  const card = document.createElement('div');
-  card.className = 'paper-card';
-  card.dataset.index = index;
-  card.dataset.url = paper.url;
-
-  // Stack offset for cards behind
-  const offset = index * 4;
-  const scale = 1 - index * 0.03;
-  card.style.transform = `translateY(${offset}px) scale(${scale})`;
-  card.style.zIndex = filteredPapers.length - index;
-
-  card.innerHTML = `
-    <div class="swipe-indicator read">READ</div>
-    <div class="swipe-indicator skip">NOPE</div>
-    <div class="card-preview ${paper.cluster}">
-      <div class="preview-venue">${paper.venue}</div>
-      <div class="preview-title">${paper.title}</div>
-      <div class="preview-authors">${paper.authors.replace(/J\. Murzaku|Murzaku/g, '<strong>$&</strong>')}</div>
-      <div class="preview-abstract">${paper.abstract}</div>
-      <div class="preview-cluster-icon ${paper.cluster}">${clusterIcons[paper.cluster]}</div>
-    </div>
-  `;
-
-  // Only add drag handlers to top card
-  if (index === 0) {
-    setupDragHandlers(card);
-  }
-
-  return card;
-}
-
-// Render visible cards (show top 3)
-function renderCards() {
-  cardStack.innerHTML = '';
-
-  if (filteredPapers.length === 0) {
-    cardStack.innerHTML = `
-      <div class="empty-state">
-        <h3>No papers found</h3>
-        <p>Try a different filter</p>
-        <button onclick="resetFilter()">Show All</button>
-      </div>
-    `;
-    cardCounter.textContent = '0 / 0';
-    return;
-  }
-
-  // Show up to 3 cards
-  const visibleCount = Math.min(3, filteredPapers.length - currentIndex);
-  for (let i = visibleCount - 1; i >= 0; i--) {
-    const paperIdx = currentIndex + i;
-    if (paperIdx < filteredPapers.length) {
-      const card = createCard(filteredPapers[paperIdx], i);
-      cardStack.appendChild(card);
-    }
-  }
-
-  updateCounter();
-}
-
-// Update counter
-function updateCounter() {
-  const current = Math.min(currentIndex + 1, filteredPapers.length);
-  cardCounter.textContent = `${current} / ${filteredPapers.length}`;
-}
-
-// Setup drag handlers
-function setupDragHandlers(card) {
-  const onStart = (e) => {
-    isDragging = true;
-    const point = e.touches ? e.touches[0] : e;
-    startX = point.clientX;
-    startY = point.clientY;
-    currentX = 0;
-    currentY = 0;
-    card.style.transition = 'none';
-  };
-
-  const onMove = (e) => {
-    if (!isDragging) return;
-    const point = e.touches ? e.touches[0] : e;
-    currentX = point.clientX - startX;
-    currentY = point.clientY - startY;
-
-    const rotation = currentX * 0.05;
-    card.style.transform = `translate(${currentX}px, ${currentY}px) rotate(${rotation}deg)`;
-
-    // Update indicators
-    const readIndicator = card.querySelector('.swipe-indicator.read');
-    const skipIndicator = card.querySelector('.swipe-indicator.skip');
-
-    if (currentX > 50) {
-      readIndicator.style.opacity = Math.min((currentX - 50) / 50, 1);
-      skipIndicator.style.opacity = 0;
-      card.classList.add('swiping-right');
-      card.classList.remove('swiping-left');
-    } else if (currentX < -50) {
-      skipIndicator.style.opacity = Math.min((-currentX - 50) / 50, 1);
-      readIndicator.style.opacity = 0;
-      card.classList.add('swiping-left');
-      card.classList.remove('swiping-right');
-    } else {
-      readIndicator.style.opacity = 0;
-      skipIndicator.style.opacity = 0;
-      card.classList.remove('swiping-right', 'swiping-left');
-    }
-  };
-
-  const onEnd = () => {
-    if (!isDragging) return;
-    isDragging = false;
-
-    card.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
-
-    if (currentX > 100) {
-      swipeRight();
-    } else if (currentX < -100) {
-      swipeLeft();
-    } else {
-      // Reset position
-      card.style.transform = 'translateY(0) scale(1)';
-      card.classList.remove('swiping-right', 'swiping-left');
-      const readIndicator = card.querySelector('.swipe-indicator.read');
-      const skipIndicator = card.querySelector('.swipe-indicator.skip');
-      readIndicator.style.opacity = 0;
-      skipIndicator.style.opacity = 0;
-    }
-  };
-
-  // Mouse events
-  card.addEventListener('mousedown', onStart);
-  document.addEventListener('mousemove', onMove);
-  document.addEventListener('mouseup', onEnd);
-
-  // Touch events
-  card.addEventListener('touchstart', onStart, { passive: true });
-  document.addEventListener('touchmove', onMove, { passive: true });
-  document.addEventListener('touchend', onEnd);
-}
-
-// Swipe right - open paper
-function swipeRight() {
-  const card = cardStack.querySelector('.paper-card[data-index="0"]');
-  if (!card) return;
-
-  card.style.transition = 'transform 0.4s ease';
-  card.style.transform = 'translate(150%, -20px) rotate(30deg)';
-
-  const url = filteredPapers[currentIndex]?.url;
-  if (url && url !== '#') {
-    setTimeout(() => window.open(url, '_blank'), 200);
-  }
-
-  setTimeout(() => {
-    currentIndex++;
-    if (currentIndex >= filteredPapers.length) {
-      currentIndex = 0; // Loop back
-    }
-    renderCards();
-  }, 300);
-}
-
-// Swipe left - skip
-function swipeLeft() {
-  const card = cardStack.querySelector('.paper-card[data-index="0"]');
-  if (!card) return;
-
-  card.style.transition = 'transform 0.4s ease';
-  card.style.transform = 'translate(-150%, -20px) rotate(-30deg)';
-
-  setTimeout(() => {
-    currentIndex++;
-    if (currentIndex >= filteredPapers.length) {
-      currentIndex = 0; // Loop back
-    }
-    renderCards();
-  }, 300);
-}
-
-// Filter papers
-function filterPapers(cluster) {
-  currentFilter = cluster;
-  currentIndex = 0;
-
-  if (cluster === 'all') {
-    filteredPapers = [...papers];
-  } else {
-    filteredPapers = papers.filter(p => p.cluster === cluster);
-  }
-
-  renderCards();
-}
-
-// Reset filter
-function resetFilter() {
-  document.querySelector('.chip.active')?.classList.remove('active');
-  document.querySelector('.chip[data-filter="all"]')?.classList.add('active');
-  filterPapers('all');
-}
-
-// Event listeners
-filterChips.addEventListener('click', (e) => {
-  if (e.target.classList.contains('chip')) {
-    document.querySelector('.chip.active')?.classList.remove('active');
-    e.target.classList.add('active');
-    filterPapers(e.target.dataset.filter);
-  }
-});
-
-btnSkip.addEventListener('click', swipeLeft);
-btnRead.addEventListener('click', swipeRight);
-
-// Keyboard shortcuts
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowRight') swipeRight();
-  if (e.key === 'ArrowLeft') swipeLeft();
-});
-
-// Initialize
-renderCards();
-</script>
 
 </body>
 </html>
